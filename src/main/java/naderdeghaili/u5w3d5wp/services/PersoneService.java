@@ -29,6 +29,7 @@ public class PersoneService {
         }
 
         Persona nuovaPersona = new Persona(payload.nomeCompleto(), payload.email(), bcrypt.encode(payload.password()), payload.ruolo());
+        log.info("Nuovo " + nuovaPersona.getRuolo() + " registrato con id: " + nuovaPersona.getId());
         return personeRepository.save(nuovaPersona);
     }
 
