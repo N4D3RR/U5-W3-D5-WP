@@ -27,8 +27,8 @@ public class Prenotazione {
     public Prenotazione() {
     }
 
-    public Prenotazione(LocalDate data, Evento evento, Persona persona) {
-        this.data = data;
+    public Prenotazione(Evento evento, Persona persona) {
+        this.data = LocalDate.now();
         this.evento = evento;
         this.persona = persona;
     }
