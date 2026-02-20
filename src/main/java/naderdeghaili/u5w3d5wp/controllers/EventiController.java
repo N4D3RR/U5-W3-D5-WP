@@ -38,7 +38,7 @@ public class EventiController {
     }
 
     //GET EVENTO
-    @GetMapping("/{eventoId")
+    @GetMapping("/{eventoId}")
     public Evento getEventobyId(@PathVariable UUID eventoId) {
         return this.eventiService.findById(eventoId);
     }
@@ -60,7 +60,7 @@ public class EventiController {
     }
 
     //PUT EVENTO (ORGANIZZATORE)
-    @PutMapping("/{eventoId")
+    @PutMapping("/{eventoId}")
     @PreAuthorize("hasAuthority('ORGANIZZATORE')")
     public Evento updateEvento(@PathVariable UUID eventoId,
                                @RequestBody @Validated NuovoEventoDTO payload,

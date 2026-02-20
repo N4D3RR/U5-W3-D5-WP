@@ -40,5 +40,12 @@ public class ErrorsHandler {
         return new ErrorsDTO("Non disponi dei permessi necessari", LocalDateTime.now());
     }
 
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorsDTO handleIllegalArgumentException(IllegalArgumentException ex) {
+
+        return new ErrorsDTO(ex.getMessage(), LocalDateTime.now());
+    }
+
 
 }
