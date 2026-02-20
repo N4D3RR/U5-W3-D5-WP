@@ -1,1 +1,6 @@
 ![DrawSQL Diagram](drawSQL.png)
+![DB](DB.png)
+![Postman queries](postman.png)
+![Eventi](eventiTable.png)
+![Persone](personeTable.png)
+![Prenotazioni](prenotazioniTable.png)
