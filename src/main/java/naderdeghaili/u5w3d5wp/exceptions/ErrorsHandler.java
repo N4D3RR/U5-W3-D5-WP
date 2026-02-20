@@ -3,6 +3,7 @@ package naderdeghaili.u5w3d5wp.exceptions;
 import naderdeghaili.u5w3d5wp.payloads.ErrorsDTO;
 import naderdeghaili.u5w3d5wp.payloads.ErrorsWithListDTO;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -45,6 +46,13 @@ public class ErrorsHandler {
     public ErrorsDTO handleIllegalArgumentException(IllegalArgumentException ex) {
 
         return new ErrorsDTO(ex.getMessage(), LocalDateTime.now());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorsDTO handleHttpMessageNotReadable(HttpMessageNotReadableException ex) {
+
+        return new ErrorsDTO("Il ruolo deve essere: UTENTE o ORGANIZZATORE", LocalDateTime.now());
     }
 
 
